@@ -24,10 +24,14 @@ func isPrime(n int) bool {
 		return false
 	}
 
+	if n != 2 && n%2 == 0 {
+		return false
+	}
+
 	// Trial division
 	r := int(math.Sqrt(float64(n)))
 
-	for i := 2; i <= r; i++ {
+	for i := 3; i <= r; i++ {
 		if n%i == 0 {
 			return false
 		}
